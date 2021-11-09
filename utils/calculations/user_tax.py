@@ -1,2 +1,4 @@
+tax_by_kilometer = 0.49
+
 def calculate_user_tax_by_kilometer(kilometers):
-  return kilometers * 0.49
+  return kilometers * tax_by_kilometer

@@ -1,0 +1,62 @@
+[
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "Sao Paulo",
+    "distance": 432,
+    "anualPassengers": 7308000
+  },
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "Volta Redonda",
+    "distance": 148,
+    "anualPassengers": 2198000
+  },
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "Sao Jose dos Campos",
+    "distance": 346,
+    "anualPassengers": 210000
+  },
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "Campinas",
+    "distance": 491,
+    "anualPassengers": 483000
+  },
+  {
+    "cityA": "Volta Redonda",
+    "cityB": "Sao Jose dos Campos",
+    "distance": 231,
+    "anualPassengers": 85000
+  },
+  {
+    "cityA": "Volta Redonda",
+    "cityB": "Sao Paulo",
+    "distance": 317,
+    "anualPassengers": 280000
+  },
+  {
+    "cityA": "Volta Redonda",
+    "cityB": "Campinas",
+    "distance": 376,
+    "anualPassengers": 43000
+  },
+  {
+    "cityA": "Sao Jose dos Campos",
+    "cityB": "Sao Paulo",
+    "distance": 95,
+    "anualPassengers": 8995000
+  },  
+  {
+    "cityA": "Sao Jose dos Campos",
+    "cityB": "Campinas",
+    "distance": 153,
+    "anualPassengers": 1449000
+  },
+  {
+    "cityA": "Sao Paulo",
+    "cityB": "Campinas",
+    "distance": 93,
+    "anualPassengers": 12581000
+  }
+]
