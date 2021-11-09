@@ -1,21 +1,18 @@
 from utils.calculations.user_tax import calculate_user_tax_by_kilometer
 from utils.calculations.anual_cost import calculate_anual_cost_by_kilometer
 from utils.calculations.anual_projection import calculate_anual_projection_by_percentage
-from utils.reports.table_generator import (
-    render_row,
-    render_header,
-    render_line,
-)
 from utils.calculations.minimal_passengers_to_profit import (
     calculate_minimal_passengers_to_profit_10_percent,
 )
+from utils.reports.functions import is_railroad_viable, convertRouteToRow
+from utils.reports.renderer import render_html
 import json
 import pandas as pd
 import webbrowser
 
 routes = json.load(open("data/routes.json"))
+table = []
 
-render_header()
 for route in routes:
     distance = route.get("distance")
     anual_passengers = route.get("anualPassengers")
@@ -46,10 +43,16 @@ for route in routes:
         "anualPassengers"
     )
     route["is_viable"] = is_viable
-    render_row(route)
-render_line()
+    table.append(convertRouteToRow(route))
 
-df = pd.DataFrame(routes)
+print(is_railroad_viable(routes))
+
+html_file = open("report.html", "w")
+report = render_html(table, is_railroad_viable(routes))
+html_file.write(report)
+html_file.close()
+
+df = pd.DataFrame(table)
 df.to_html("result.html")
 
 # new = 2  # open in a new tab, if possible
