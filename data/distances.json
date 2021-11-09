@@ -1,0 +1,52 @@
+[
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "São Paulo",
+    "distance": 432
+  },
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "Volta Redonda",
+    "distance": 148
+  },
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "São José dos Campos",
+    "distance": 346
+  },
+  {
+    "cityA": "Rio de Janeiro",
+    "cityB": "Campinas",
+    "distance": 491
+  },
+  {
+    "cityA": "Volta Redonda",
+    "cityB": "São José dos Campos",
+    "distance": 231
+  },
+  {
+    "cityA": "Volta Redonda",
+    "cityB": "São Paulo",
+    "distance": 317
+  },
+  {
+    "cityA": "Volta Redonda",
+    "cityB": "Campinas",
+    "distance": 376
+  },
+  {
+    "cityA": "São José dos Campos",
+    "cityB": "São Paulo",
+    "distance": 95
+  },  
+  {
+    "cityA": "São José dos Campos",
+    "cityB": "Campinas",
+    "distance": 153
+  },
+  {
+    "cityA": "São Paulo",
+    "cityB": "Campinas",
+    "distance": 93
+  }
+]

@@ -2,14 +2,22 @@ from utils.format.currency import to_currency
 from utils.calculations.user_tax import calculate_user_tax_by_kilometer
 from utils.calculations.anual_cost import calculate_anual_cost_by_kilometer
 from utils.calculations.anual_projection import calculate_anual_projection_by_percentage
-from utils.reports.user_tax import generate_user_tax_report
+from utils.reports.user_tax import generate_user_tax_report, generate_user_tax_header, generate_user_tax_line
 from utils.reports.anual_projection import generate_anual_projection_report
+import json
 
-km = 1
+km = 27
+travels = json.load(open("data/distances.json"))
 
 # 1 Cálculo da tarifa ao passageiro por trecho
-user_tax = calculate_user_tax_by_kilometer(km)
-generate_user_tax_report(to_currency(user_tax), km)
+generate_header()
+for travel in travels:
+  distance = travel.get("distance")
+  cityA = travel.get("cityA")
+  cityB = travel.get("cityB")
+  user_tax = calculate_user_tax_by_kilometer(distance)
+  generate_user_tax_report(to_currency(user_tax), distance, cityA + " - " + cityB)
+generate_user_tax_header()
 
 # 2) Cálculo do custo operacional anual por trecho
 
