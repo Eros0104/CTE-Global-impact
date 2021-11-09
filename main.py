@@ -10,14 +10,14 @@ km = 27
 travels = json.load(open("data/distances.json"))
 
 # 1 Cálculo da tarifa ao passageiro por trecho
-generate_header()
+generate_user_tax_header()
 for travel in travels:
   distance = travel.get("distance")
   cityA = travel.get("cityA")
   cityB = travel.get("cityB")
   user_tax = calculate_user_tax_by_kilometer(distance)
   generate_user_tax_report(to_currency(user_tax), distance, cityA + " - " + cityB)
-generate_user_tax_header()
+generate_user_tax_line()
 
 # 2) Cálculo do custo operacional anual por trecho
 
