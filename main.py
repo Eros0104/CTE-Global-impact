@@ -1,4 +1,3 @@
-from utils.format.currency import to_currency
 from utils.calculations.user_tax import calculate_user_tax_by_kilometer
 from utils.calculations.anual_cost import calculate_anual_cost_by_kilometer
 from utils.calculations.anual_projection import calculate_anual_projection_by_percentage
@@ -8,6 +7,7 @@ from utils.reports.table_generator import (
     render_line,
 )
 import json
+import pandas as pd
 
 km = 27
 routes = json.load(open("data/routes.json"))
@@ -34,6 +34,8 @@ for route in routes:
     route["anual_projection_60"] = calculate_anual_projection_by_percentage(
         60, distance, anual_passengers
     )
-
     render_row(route)
 render_line()
+
+df = pd.DataFrame(routes)
+df.to_html("result.html")
