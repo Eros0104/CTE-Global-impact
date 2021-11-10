@@ -7,8 +7,8 @@ from utils.calculations.minimal_passengers_to_profit import (
 from utils.reports.functions import is_railroad_viable, convertRouteToRow
 from utils.reports.renderer import render_html
 import json
-import pandas as pd
 import webbrowser
+import pathlib
 
 routes = json.load(open("data/routes.json"))
 table = []
@@ -45,16 +45,12 @@ for route in routes:
     route["is_viable"] = is_viable
     table.append(convertRouteToRow(route))
 
-print(is_railroad_viable(routes))
-
 html_file = open("report.html", "w")
 report = render_html(table, is_railroad_viable(routes))
 html_file.write(report)
 html_file.close()
 
-df = pd.DataFrame(table)
-df.to_html("result.html")
-
-# new = 2  # open in a new tab, if possible
-# url = "http://docs.python.org/library/webbrowser.html"
-# webbrowser.open(url, new=new)
+new = 2
+current_directory = pathlib.Path().resolve()
+url = "file:///%s/report.html" % current_directory
+webbrowser.open(url, new=new)

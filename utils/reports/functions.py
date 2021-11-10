@@ -18,19 +18,19 @@ def convertRouteToRow(route):
         "Passageiros anuais": beautify_number(route.get("anualPassengers")),
         "Tarifa ao passageiro": to_currency(route.get("user_tax")),
         "Custo Operacional Anual": to_currency(route.get("anual_cost")),
-        "Projeção anual com 30 dos passageiros": to_currency(
+        "Projeção anual com 30% dos passageiros": to_currency(
             route.get("anual_projection_30")
         ),
-        "Projeção anual com 40 dos passageiros": to_currency(
+        "Projeção anual com 40% dos passageiros": to_currency(
             route.get("anual_projection_40")
         ),
-        "Projeção anual com 50 dos passageiros": to_currency(
+        "Projeção anual com 50% dos passageiros": to_currency(
             route.get("anual_projection_50")
         ),
-        "Projeção anual com 60 dos passageiros": to_currency(
+        "Projeção anual com 60% dos passageiros": to_currency(
             route.get("anual_projection_60")
         ),
-        "Quantidade mínima de passageiros para lucrar 10": beautify_number(
+        "Quantidade mínima de passageiros para lucrar 10%": beautify_number(
             round(route.get("minimal_passengers_to_profit"))
         ),
         "É viável?": "Sim" if route.get("is_viable") else "Não",

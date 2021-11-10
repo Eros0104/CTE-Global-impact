@@ -1,5 +1,9 @@
-def render_body(routes):
-    return ""
+def render_row(route):
+    row = ""
+    keys = route
+    for key in keys:
+        row = row + "<td> %s </td>" % route.get(key)
+    return row
 
 
 def render_table(routes):
@@ -16,18 +20,14 @@ def render_table(routes):
     body = ""
 
     for route in routes:
-        body = body + """
+        body = (
+            body
+            + """
             <tr>
-                <td>%s</td>
-                <td>%s</td>
-                <td>%s</td>
-                <td>%s</td>
+                %s
             </tr>
-        """ % (
-            route.get("Cidade A"),
-            route.get("Cidade B"),
-            route.get("Distância (km)"),
-            route.get("Passageiros anuais"),
+        """
+            % (render_row(route))
         )
 
     table = """
@@ -58,11 +58,17 @@ def render_html(routes, is_viable):
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             </head>
             <body>
+                <h1>Relatório</h1>
                 %s
+                <h2>
+                    <b>Conclusão da análise:</b>                    
+                </h2>
+                <h3>Com base nos dados emitidos conclui-se que, %s a construção da ferrovia. </h3>
             </body>
         </html>
     """ % (
-        table
+        table,
+        "é viável" if is_viable else "não é viável",
     )
 
     return body
