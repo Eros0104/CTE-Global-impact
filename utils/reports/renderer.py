@@ -31,7 +31,7 @@ def render_table(routes):
         )
 
     table = """
-    <table class="table">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 %s
