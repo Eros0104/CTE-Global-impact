@@ -36,6 +36,6 @@ def convertRouteToRow(route):
         "É viável?": "Sim" if route.get("is_viable") else "Não",
         "Observações": ""
         if route.get("is_viable")
-        else "Realizar estudo para verificar se é viável incluindo as estações opcionais",
+        else "Realizar estudo para verificar se é viável incluindo as estações opcionais que fazem parte da rota",
     }
     return row
