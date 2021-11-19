@@ -34,5 +34,8 @@ def convertRouteToRow(route):
             round(route.get("minimal_passengers_to_profit"))
         ),
         "É viável?": "Sim" if route.get("is_viable") else "Não",
+        "Observações": ""
+        if route.get("is_viable")
+        else "Realizar estudo para verificar se é viável incluindo as estações opcionais",
     }
     return row
