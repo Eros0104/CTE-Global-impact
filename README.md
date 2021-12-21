@@ -8,7 +8,7 @@ Before starting, you will have to install the following tools:
 
 - [Git](https://git-scm.com)
 - [Python](https://www.python.org/)
-- Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+- Besides it's nice to have an editor to work with the code like [VSCode](https://code.visualstudio.com/)
 
 ## :game_die: Getting started
 
